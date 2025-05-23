@@ -2,6 +2,8 @@
 
 A quantum-resistant password manager that stores credentials in a 5x5x5 cube, encrypted with AES-256-GCM and bound to the user's device using a Machine GUID. The cube is scrambled with key-based rotations for added obfuscation, and cryptographic keys are derived using Argon2 for protection against quantum computing threats.
 
+You may have noticed I included my cube :), I would love to know if you are able to crack it! Feel free to try. 
+
 ## Features
 
 - Quantum-resistant cryptography with Argon2 (memory-hard key derivation) and AES-256-GCM (128-bit quantum security)
@@ -74,8 +76,16 @@ options:
 - Backup the passcode and/or Machine GUID securely to avoid lockout.
 - Use a private repository if including `data/cube.json` or `data/salt.bin`.
 
+## Contributing
+
+Sonny Holman (Developer)
+
 ## Testing
 
 Run unit tests to verify insertion, saving, loading, scrambling, and unscrambling:
 
 python -m unittest tests/test_cube.py
+
+## Contact
+
+Email: sonnyholman@hotmail.com
