@@ -2,7 +2,9 @@
 
 A quantum-resistant password manager that stores credentials in a 5x5x5 cube, encrypted with AES-256-GCM and bound to the user's device using a Machine GUID. The cube is scrambled with key-based rotations for added obfuscation, and cryptographic keys are derived using Argon2 for protection against quantum computing threats.
 
-You may have noticed I included my cube :), I would love to know if you are able to crack it! Feel free to try. 
+You may have noticed I included my cube :)
+
+I would love to know if you are able to crack it! Feel free to try and reap the rewards. 
 
 ## Features
 
