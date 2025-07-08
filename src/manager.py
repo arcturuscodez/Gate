@@ -31,3 +31,7 @@ class PasswordManager:
     def edit_credential(self, position, new_username=None, new_password=None):
         """Edit a credential in the cube."""
         self.cube.edit(position, new_username, new_password)
+
+    def list_credentials(self):
+        """List all credentials in the cube."""
+        return self.cube.list_credentials()

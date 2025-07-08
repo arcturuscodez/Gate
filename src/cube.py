@@ -66,6 +66,17 @@ class Cube:
         """Serialize the cube to a JSON string."""
         return json.dumps(self.cube.tolist(), default=lambda x: x if x is not None else None)
 
+    def list_credentials(self):
+        """List all credentials in the cube."""
+        creds = []
+        for x in range(self.size):
+            for y in range(self.size):
+                for z in range(self.size):
+                    val = self.cube[x, y, z]
+                    if val is not None:
+                        creds.append(((x, y, z), val))
+        return creds
+
     @classmethod
     def from_json(cls, json_str):
         """Deserialize a cube from a JSON string."""

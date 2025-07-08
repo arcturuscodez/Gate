@@ -23,6 +23,9 @@ def main():
         with open(salt_file, "rb") as f:
             salt = f.read()
         key, _ = generate_key(args.key.encode(), salt)
+    else:
+        with open(salt_file, "wb") as f:
+            f.write(salt)
     manager = PasswordManager(key)
 
     if os.path.exists(cube_file):
@@ -64,15 +67,11 @@ def main():
             print(f"Edited credential at {position}")
 
         elif args.action == "list":
-            credentials_found = False
-            for x in range(manager.cube.size):
-                for y in range(manager.cube.size):
-                    for z in range(manager.cube.size):
-                        credential = manager.cube.cube[x, y, z]
-                        if credential is not None:
-                            print(f"Position ({x}, {y}, {z}): {credential}")
-                            credentials_found = True
-            if not credentials_found:
+            credentials = manager.list_credentials()
+            if credentials:
+                for pos, cred in credentials:
+                    print(f"Position {pos}: {cred}")
+            else:
                 print("No credentials found in the cube.")
 
         os.makedirs("data", exist_ok=True)
