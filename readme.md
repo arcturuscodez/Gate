@@ -1,8 +1,6 @@
-# 3D Cube Password Manager
+# 3D Cube Password Manager (GATE)
 
-A password manager that stores credentials in a 5x5x5 cube, encrypted with AES-256-GCM and bound to the user's device using a Machine GUID. The cube is scrambled with key-based rotations for added obfuscation, and cryptographic keys are derived using Argon2 for strong protection against brute-force attacks.
-
-> **Note:** While Argon2 and AES-256-GCM are strong cryptographic choices, no software is truly "quantum-proof." This manager uses best-practice cryptography for current and near-future threats.
+A password manager that stores credentials in a 3D cube of configurable size (default is 5x5x5, but you can create larger or smaller cubes as needed). The cube is encrypted with AES-256-GCM and bound to the user's device using a Machine GUID. The cube is scrambled with key-based rotations for added obfuscation, and cryptographic keys are derived using Argon2 for strong protection against brute-force attacks.
 
 ---
 
@@ -10,7 +8,7 @@ A password manager that stores credentials in a 5x5x5 cube, encrypted with AES-2
 
 - **Strong cryptography:** Argon2 (memory-hard key derivation) and AES-256-GCM (128-bit quantum security)
 - **Device-bound encryption:** Uses the Windows Machine GUID, so the cube is only decryptable on the original device
-- **Credential storage:** 5x5x5 NumPy array with (x, y, z) coordinates
+- **Configurable credential storage:** Credentials are stored in a 3D NumPy array (cube) of any size you choose (e.g., 5x5x5 by default, but can be larger or smaller)
 - **Cube scrambling:** Key-based rotations to hide credential positions
 - **Command-line interface:** Insert, delete, edit, and list credentials
 - **Secure storage:** Encrypted cube (`data/cube.json`) and public salt (`data/salt.bin`)
